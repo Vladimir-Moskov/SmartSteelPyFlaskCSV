@@ -1,0 +1,7 @@
+$ pip install <package-name>
+pip install flask-sqlalchemy
+pip install flask-migrate
+flask db init
+flask db migrate -m "SteelProcessing table"
+flask db migrate
+flask db upgrade

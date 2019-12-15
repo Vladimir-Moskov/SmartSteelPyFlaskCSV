@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>{{ title }} - Interview Smart Steel Technologies GmbH </title>
+    <style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 100%;
+            }
+
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+
+    </style>
+</head>
+<body>
+<h1>{{ title }}</h1>
+<table>
+    <tr>
+        {% for header in headers %}
+        <th>{{ header }}</th>
+        {% endfor %}
+      </tr>
+    {% for process_item in steelprocessing_all %}
+    <tr valign="top">
+        <td>{{ process_item.id }}</td>
+        <td>{{ process_item.timestamp }}</td>
+        <td>{{ process_item.temperature }}</td>
+        <td>{{ process_item.duration }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
