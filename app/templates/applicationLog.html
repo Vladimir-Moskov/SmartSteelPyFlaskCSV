@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <table>
+        <tr>
+            {% for header in headers %}
+            <th>{{ header }}</th>
+            {% endfor %}
+          </tr>
+        {% for log_item in logs_all %}
+        <tr valign="top">
+            <td>{{ log_item.id }}</td>
+            <td>{{ log_item.timestamp }}</td>
+            <td>{{ log_item.remote_addr }}</td>
+            <td>{{ log_item.url }}</td>
+            <td>{{ log_item.method }}</td>
+            <td>{{ log_item.user_agent }}</td>
+            <td>{{ log_item.remote_user }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
