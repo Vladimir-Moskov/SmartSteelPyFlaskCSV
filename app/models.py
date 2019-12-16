@@ -1,8 +1,12 @@
+# typical flask model setup
 from app import db
 from datetime import datetime
 
 
 class ApplicationRequestLog(db.Model):
+    """
+        Table to store user requests for "On each GET request, log that the data was requested (in the same database)"
+    """
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     timestamp = db.Column(db.DateTime, index=True, unique=False)
     remote_addr = db.Column(db.String(100))
@@ -12,8 +16,8 @@ class ApplicationRequestLog(db.Model):
     remote_user = db.Column(db.String(100))
 
     def __repr__(self):
-        return '<ApplicationRequestLog: id:{}, timestamp:{}, remote_address:{}, duration:{}>'.\
-            format(self.id, self.timestamp, self.remote_address, self.url, self.user)
+        return '<ApplicationRequestLog: id:{}, timestamp:{}, remote_address:{}, remote_user:{}, user_agent:{}>'.\
+            format(self.id, self.timestamp, self.remote_address, self.url, self.remote_user, self.user_agent)
 
     @staticmethod
     def query_get_all():
@@ -36,25 +40,38 @@ class ApplicationRequestLog(db.Model):
         db.session.add(new_row)
         db.session.commit()
 
+    # TODO - change it to dictionary {header: field}
     @staticmethod
     def headers():
+        """
+
+        :return: list of headers names for ui
+        """
         return ["ID", "TIMESTAMP", "IP", "URL", "METHOD", "AGENT", "USER"]
 
 
 class SteelProcessing(db.Model):
+    """
+        Table SteelProcessing - store data model from file task_data.csv
+    """
     id = db.Column(db.Integer, primary_key=True)
     timestamp = db.Column(db.DateTime, index=True, unique=False)
     temperature = db.Column(db.Float, index=True, unique=False)
     # TODO: convert timedelta to Float in order to save it in DB and store it in acceptable format but not as string
     # duration = db.Column(db.Float) # duration in microseconds
-    duration = db.Column(db.String(128))  # duration in microseconds
+    duration = db.Column(db.String(128))  # store it as is - string for now
 
     def __repr__(self):
         return '<SteelProcessing: id:{}, timestamp:{}, temperature:{}, duration:{}>'.\
             format(self.id, self.timestamp, self.temperature, self.duration)
 
+    # TODO - change it to dictionary {header: field}
     @staticmethod
     def headers():
+        """
+
+        :return: list of headers names for ui
+        """
         return ["ID", "TIMESTAMP", "TEMPERATURE", "DURATION"]
 
     @staticmethod
@@ -68,6 +85,7 @@ class SteelProcessing(db.Model):
 
     @staticmethod
     def query_add_by_id(id, timestamp, temperature, duration):
+        # check if row with the same id already exists
         exists = SteelProcessing.query.filter_by(id=id).first()
         if not exists:
             # TODO: convert timedelta to Float in order to save it in DB
