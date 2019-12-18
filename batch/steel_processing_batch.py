@@ -6,6 +6,7 @@ from collections import namedtuple
 
 
 def steel_processing_batch():
+    print("Data extraction has been started.")
     # uncomment this line to do another test
     # SteelProcessing.query_delete_all()
     errors = []  # get all lines from file which cant be inserted id DB - invalid data/format/values
@@ -47,7 +48,7 @@ def steel_processing_batch():
         with open(filepath, 'w') as file_error:
             for item in errors:
                 file_error.write("%s\n" % item)
-
+    print("Data extraction has been completed.")
 
 if __name__ == '__main__':
     steel_processing_batch()

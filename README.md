@@ -26,7 +26,7 @@ Technical details for the task can be found in the task_description.txt found in
 Best regards,
 The team at Smart Steel Technologies GmbH
 
-****************************** TASK  ********************************************************************
+****************************** TASK  ***********************************************
     We have supplied you with a file named 'task_data.csv'. The programming task
     that we are asking you to perform is purposely open-ended. For a Python
     developer with the type of experience we are looking for, the task should not
