@@ -19,7 +19,6 @@ class Config(object):
     @staticmethod
     def get_file_batch_steel_processing_error():
         """
-
         :return: file name for new error file
         """
         return os.path.join(Config.BATCH_DIR, '%s_task_data.error' % datetime.now().strftime("%m_%d_%Y_%H_%M_%S"))
