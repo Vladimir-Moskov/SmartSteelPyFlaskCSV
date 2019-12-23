@@ -6,7 +6,8 @@
   5. batch job has been implemented as independent part of the system - here batch/steel_processing_batch.py
 
 
-## Project repository https://github.com/Vladimir-Moskov/InterviewSmartSteelTechnologiesGmbH
+## Project repository
+> https://github.com/Vladimir-Moskov/InterviewSmartSteelTechnologiesGmbH
 
 ### For simplicity - logging has not been added
 > TODO: add real life logging
