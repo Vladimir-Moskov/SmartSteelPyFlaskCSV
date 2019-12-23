@@ -9,14 +9,14 @@
 ## Project repository
 > https://github.com/Vladimir-Moskov/InterviewSmartSteelTechnologiesGmbH
 
-## From point of view MVP (Minimal Valuable Product) 
+## From point of view MVP (Minimum Valuable Product)
 
-1.#### For simplicity - logging has not been added
+1. For simplicity - logging has not been added
 > TODO: add real life logging
 > https://www.scalyr.com/blog/getting-started-quickly-with-flask-logging/
 > https://stackoverflow.com/questions/52728928/setting-up-a-database-handler-for-flask-logger
 
-2.#### For simplicity - unit tests and integration tests has not been implemented as well
+2. For simplicity - unit tests and integration tests has not been implemented as well
 > TODO: add real life tests with pytest
 
 
