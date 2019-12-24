@@ -1,4 +1,6 @@
-# flask application configuration variable
+"""
+    flask application configuration variable
+"""
 
 import os
 from datetime import datetime
@@ -7,6 +9,9 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 class Config(object):
+    """
+        Class with configurations
+    """
     # Setup Database driver/ connect to DB
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'app.db')
@@ -19,6 +24,7 @@ class Config(object):
     @staticmethod
     def get_file_batch_steel_processing_error():
         """
+        use it to create error file from template
         :return: file name for new error file
         """
         return os.path.join(Config.BATCH_DIR, '%s_task_data.error' % datetime.now().strftime("%m_%d_%Y_%H_%M_%S"))

@@ -1,4 +1,8 @@
-# typical flask model setup
+"""
+    ORM - typical flask model setup
+    ApplicationRequestLog for logs
+    SteelProcessing for records from given file with data
+"""
 from app import db
 from datetime import datetime
 
@@ -16,20 +20,37 @@ class ApplicationRequestLog(db.Model):
     remote_user = db.Column(db.String(100))
 
     def __repr__(self):
+        """
+        Standard customization of class instance to string
+        :return: string representation of object
+        """
         return '<ApplicationRequestLog: id:{}, timestamp:{}, remote_address:{}, remote_user:{}, user_agent:{}>'.\
             format(self.id, self.timestamp, self.remote_address, self.url, self.remote_user, self.user_agent)
 
     @staticmethod
     def query_get_all():
+        """
+        just select all
+        :return: all records from db (no paging or filtering)
+        """
         return ApplicationRequestLog.query.all()
 
     @staticmethod
     def query_delete_all():
+        """
+            just delete all records from table - for testing purpose only
+
+        """
         ApplicationRequestLog.query.delete()
         db.session.commit()
 
     @staticmethod
     def query_add(request):
+        """
+        add log record into DB, simple as possible
+        :param request: real request - GET http from browser, web page
+        :return: nothing
+        """
         timestamp_datetime = datetime.now()
         new_row = ApplicationRequestLog(timestamp=timestamp_datetime,
                                         remote_addr=request.remote_addr,
@@ -44,7 +65,7 @@ class ApplicationRequestLog(db.Model):
     @staticmethod
     def headers():
         """
-
+         headers for front end
         :return: list of headers names for ui
         """
         return ["ID", "TIMESTAMP", "IP", "URL", "METHOD", "AGENT", "USER"]
@@ -62,6 +83,10 @@ class SteelProcessing(db.Model):
     duration = db.Column(db.String(128))  # store it as is - string for now
 
     def __repr__(self):
+        """
+            Standard customization of class instance to string
+            :return: string representation of object
+        """
         return '<SteelProcessing: id:{}, timestamp:{}, temperature:{}, duration:{}>'.\
             format(self.id, self.timestamp, self.temperature, self.duration)
 
@@ -69,24 +94,40 @@ class SteelProcessing(db.Model):
     @staticmethod
     def headers():
         """
-
+        headers for front end
         :return: list of headers names for ui
         """
         return ["ID", "TIMESTAMP", "TEMPERATURE", "DURATION"]
 
     @staticmethod
     def query_get_all():
+        """
+          just select all
+          :return: all records from db (no paging or filtering)
+        """
         return SteelProcessing.query.all()
 
     @staticmethod
     def query_delete_all():
+        """
+            just delete all records from table - for testing purpose only
+        """
         SteelProcessing.query.delete()
         db.session.commit()
 
     @staticmethod
-    def query_add_by_id(id, timestamp, temperature, duration):
+    def query_add_by_id(row_id, timestamp, temperature, duration):
+        """
+           add log record into DB, simple as possible
+        :param row_id: row data id
+        :param timestamp: - timestamp field from data file
+        :param temperature: - temperature field from data file
+        :param duration: - duration field from data file
+
+        :return: nothing
+        """
         # check if row with the same id already exists
-        exists = SteelProcessing.query.filter_by(id=id).first()
+        exists = SteelProcessing.query.filter_by(id=row_id).first()
         if not exists:
             # TODO: convert timedelta to Float in order to save it in DB
             # from datetime import timedelta
@@ -97,7 +138,7 @@ class SteelProcessing(db.Model):
             # duration_microsec = dt.microseconds
             #
             timestamp_datetime = datetime.strptime(timestamp, '%Y-%m-%d %H:%M:%S.%f')
-            new_row = SteelProcessing(id=id, timestamp=timestamp_datetime, temperature=temperature, duration=duration)
+            new_row = SteelProcessing(id=row_id, timestamp=timestamp_datetime, temperature=temperature, duration=duration)
             db.session.add(new_row)
             db.session.commit()
         return exists

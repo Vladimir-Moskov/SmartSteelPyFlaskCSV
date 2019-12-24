@@ -1,3 +1,7 @@
+"""
+    Standard Flask routing - just simple url to function mapping
+"""
+
 from flask import request
 from flask import render_template
 from app import app
@@ -6,8 +10,12 @@ from app.models import ApplicationRequestLog
 from functools import wraps
 
 
-# user request logging decorator
 def log_request(func):
+    """
+    user request logging decorator
+    :param func: decorated function
+    :return: decorator
+    """
     @wraps(func)
     def decorated(*args, **kwargs):
         ApplicationRequestLog.query_add(request)
@@ -22,7 +30,7 @@ def log_request(func):
 def index():
     """
         Welcome page
-    :return:
+    :return: page itself
     """
     return render_template('index.html', title='Welcome here')
 
@@ -33,7 +41,7 @@ def steelprocessing():
     """
          Page with data from task_data.csv in order to solve
          Serve the database data (from `task_data.csv`) in a _simple_ html format
-    :return:
+    :return: page itself
     """
     # TODO - it is nice to have paging/filtering over data
     return render_template('steelProcessing.html',
@@ -41,13 +49,14 @@ def steelprocessing():
                            headers=SteelProcessing.headers(),
                            steelprocessing_all=SteelProcessing.query_get_all())
 
+
 @app.route('/log')
 @log_request
 def log():
     """
          Page with data from user requests log in order to solve -
          "On each GET request, log that the data was requested (in the same database)"
-    :return:
+    :return: page itself
     """
     # TODO - it is nice to have paging/filtering over data
     return render_template('applicationLog.html',

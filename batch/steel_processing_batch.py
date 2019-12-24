@@ -1,4 +1,7 @@
-# Solve - Create an application that transfers `task_data.csv` to a database
+"""
+    Solve - Create an application that transfers `task_data.csv` to a database
+    Solution works within Flask ecosystem.
+"""
 
 from app.models import SteelProcessing
 from app.config import Config
@@ -6,6 +9,11 @@ from collections import namedtuple
 
 
 def steel_processing_batch():
+    """
+    All in one place function - read from file and save in db
+
+    :return: nothing for now
+    """
     print("Data extraction has been started.")
     # uncomment this line to do another test
     # SteelProcessing.query_delete_all()
@@ -39,6 +47,7 @@ def steel_processing_batch():
                                                     current_row.timestamp,
                                                     current_row.temperature,
                                                     current_row.duration)
+                # TODO: specify which exceptions can be handled
                 except:
                     errors.append(line)
     # put all lines with errors in the file
@@ -50,5 +59,7 @@ def steel_processing_batch():
                 file_error.write("%s\n" % item)
     print("Data extraction has been completed.")
 
+
+# run it as independent script / application - one time job
 if __name__ == '__main__':
     steel_processing_batch()
