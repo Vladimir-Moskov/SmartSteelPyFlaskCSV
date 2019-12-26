@@ -19,6 +19,10 @@
 2. For simplicity - unit tests and integration tests has not been implemented as well
 > TODO: add real life tests with pytest
 
+3. For simplicity - there is no any authorization/security
+> TODO: implement it
+
+4. TODO: add flask-serialize
 
 ## Project setup steps (Windows only)
 
