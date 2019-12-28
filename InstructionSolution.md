@@ -23,6 +23,7 @@
 > TODO: implement it
 
 4. TODO: add flask-serialize
+5. TODO: fix time zone
 
 ## Project setup steps (Windows only)
 
