@@ -20,7 +20,7 @@ class ApplicationRequestLog(db.Model):
     user_agent = db.Column(db.String(100))
     remote_user = db.Column(db.String(100))
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """
         Standard customization of class instance to string
         :return: string representation of object
@@ -82,7 +82,7 @@ class SteelProcessing(db.Model):
     # duration = db.Column(db.Float) # duration in microseconds
     duration = db.Column(db.String(128))  # store it as is - string for now
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """
             Standard customization of class instance to string
             :return: string representation of object
