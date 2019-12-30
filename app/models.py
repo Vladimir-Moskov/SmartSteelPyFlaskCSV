@@ -5,6 +5,7 @@
 """
 from app import db
 from datetime import datetime
+from typing import List, Optional, Any
 
 
 class ApplicationRequestLog(db.Model):
@@ -62,7 +63,7 @@ class ApplicationRequestLog(db.Model):
 
     # TODO - change it to dictionary {header: field}
     @staticmethod
-    def headers():
+    def headers() -> List[str]:
         """
          headers for front end
         :return: list of headers names for ui
@@ -91,7 +92,7 @@ class SteelProcessing(db.Model):
 
     # TODO - change it to dictionary {header: field}
     @staticmethod
-    def headers():
+    def headers() -> List[str]:
         """
         headers for front end
         :return: list of headers names for ui
@@ -115,7 +116,7 @@ class SteelProcessing(db.Model):
         db.session.commit()
 
     @classmethod
-    def query_add_by_id(cls, row_id, timestamp, temperature, duration):
+    def query_add_by_id(cls, row_id: int, timestamp: str, temperature: float, duration: str) -> Optional[Any]:
         """
            add log record into DB, simple as possible
         :param row_id: row data id
