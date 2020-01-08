@@ -75,7 +75,6 @@
 
     > flask db upgrade
 
- 10.
 
  ## Run instructions
  ### Start data extractor
