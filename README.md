@@ -1,6 +1,13 @@
 # InterviewSmartSteelTechnologiesGmbH
 Home work for Smart Steel Technologies GmbH
 
+Summary (2020-01-08): 
+     Fortunately, my solution was good enough (or just a little bit better then others) to proceed
+     with further steps with this company. - Good news indeed.
+     
+     "We are pleased to invite you to the next step in our recruitment process, a technical phone interview."...
+     
+######################################################################################################
 Re: Python Backend Developer (m/f/d) - Industrial Data Science and Software - Application received
 Alina Kutyno <alina@smartsteeltechnologiesgmbh.recruitee.com>
 
