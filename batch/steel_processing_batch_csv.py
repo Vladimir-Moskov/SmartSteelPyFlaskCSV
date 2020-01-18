@@ -1,5 +1,5 @@
 """
-    This is the original solution - manual csv processing (bad idea - import csv or panda can do it better)
+    This is the better solution - with import csv for csv processing
     Solve - Create an application that transfers `task_data.csv` to a database
     Solution works within Flask ecosystem.
 """
