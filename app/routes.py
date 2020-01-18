@@ -48,7 +48,7 @@ def index():
 
 @app.route('/steelProcessing')
 @log_request
-def steelprocessing():
+def steel_processing():
     """
          Page with data from task_data.csv in order to solve
          Serve the database data (from `task_data.csv`) in a _simple_ html format

@@ -4,7 +4,6 @@
     Solution works within Flask ecosystem.
 """
 
-# use lib for csv parser for file
 
 from app.models import SteelProcessing
 from app.config import Config

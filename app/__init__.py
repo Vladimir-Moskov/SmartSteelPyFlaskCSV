@@ -13,7 +13,7 @@ from flask_migrate import Migrate
 app = Flask(__name__)
 # add configuration to it
 app.config.from_object(Config)
-# add DB - just sqllite
+# add DB - just sql_lite
 db = SQLAlchemy(app)
 # manage migrations
 migrate = Migrate(app, db)

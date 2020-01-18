@@ -4,8 +4,7 @@
     Solution works within Flask ecosystem.
 """
 
-# use lib for csv parser for file
-
+import csv
 from app.models import SteelProcessing
 from app.config import Config
 from collections import namedtuple

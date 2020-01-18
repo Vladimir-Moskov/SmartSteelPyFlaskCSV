@@ -1,5 +1,5 @@
 """
-    flask application configuration variable
+    flask application configuration variables
 """
 
 import os
