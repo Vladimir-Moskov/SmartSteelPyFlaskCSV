@@ -50,7 +50,8 @@ def steel_processing_batch():
                                                     current_row.temperature,
                                                     current_row.duration)
                 # TODO: specify which exceptions can be handled
-                except:
+                except Exception as excp:
+                    print(repr(excp))
                     errors.append(line)
     # put all lines with errors in the file
     if len(errors) > 0:

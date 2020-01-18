@@ -1,21 +1,16 @@
-# InterviewSmartSteelTechnologiesGmbH
-Home work for Smart Steel Technologies GmbH
+# SmartSteelPyFlaskCSV
+Home work for Smart Steel ********gies ***
 
 Summary (2020-01-08): 
-     Fortunately, my solution was good enough (or just a little bit better then others) to proceed
+     Fortunately, my solution was good enough to proceed
      with further steps with this company. - Good news indeed.
      
      "We are pleased to invite you to the next step in our recruitment process, a technical phone interview."...
      
 ######################################################################################################
 Re: Python Backend Developer (m/f/d) - Industrial Data Science and Software - Application received
-Alina Kutyno <alina@smartsteeltechnologiesgmbh.recruitee.com>
 
-Hello Volodymyr,
-
-Thank you for your interest in the Python Backend Developer (m/f/d) - Industrial Data Science and Software position
-at Smart Steel Technologies GmbH. We understand that preparing an application takes time, and we appreciate that
- you put forth that effort in the interest of working with us.
+...............
 
 We have carefully reviewed your application, and would like to invite you to move on to the next step in our
 recruitment process. Our engineers have designed a task for you to complete that will help us more precisely
@@ -24,14 +19,12 @@ be especially difficult or time consuming, and because there is no one correct s
 the problem is the information that we value the most. With that in mind, please make sure to explain with reasonable
 detail how you have arrived to your solution.
 
-If you need more than 14 days to complete the task due to holidays or a busy schedule, please let us know and we will
-keep your application "fresh". Please also note that we consider code or expository text that is copy-pasted without
+.............
+
+Please also note that we consider code or expository text that is copy-pasted without
 citation as plagiarism, but we also gladly accept solutions that do contain citations.
 
-Technical details for the task can be found in the task_description.txt found in the attached zip file.
-
-Best regards,
-The team at Smart Steel Technologies GmbH
+..................
 
 ****************************** TASK  ***********************************************
 
