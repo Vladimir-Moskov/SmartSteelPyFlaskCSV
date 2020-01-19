@@ -1,8 +1,8 @@
 # Here is solution
-  1. Flask ecosystem has been used to implement task
-  2. SQLAlchemy and ORM to deal with data model
+  1. Flask ecosystem has been used to implement task.
+  2. SQLAlchemy and ORM to deal with data model.
   3. flask_migrate Migrate to manage DB changes(add/update/delete table/field/model)
-  4. web application page mapping in app/routes
+  4. web application page mapping in app/routes.
   5. batch job has been implemented as independent part of the system - here batch/steel_processing_batch.py
 
 
