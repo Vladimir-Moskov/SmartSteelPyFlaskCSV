@@ -1,6 +1,6 @@
 """
     This is the original solution - manual csv processing (bad idea - import csv or panda can do it better)
-    Solve - Create an application that transfers `task_data.csv` to a database
+    it Solves - Create an application that transfers `task_data.csv` to a database
     Solution works within Flask ecosystem.
 """
 
@@ -50,8 +50,8 @@ def steel_processing_batch():
                                                     current_row.temperature,
                                                     current_row.duration)
                 # TODO: specify which exceptions can be handled
-                except Exception as excp:
-                    print(repr(excp))
+                except Exception as error:
+                    print(repr(error))
                     errors.append(line)
     # put all lines with errors in the file
     if len(errors) > 0:
