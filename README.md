@@ -6,7 +6,12 @@ Summary (2020-01-08):
      with further steps with this company. - Good news indeed.
      
      "We are pleased to invite you to the next step in our recruitment process, a technical phone interview."...
+
+Update (2020-01-22): 
+     Some how was not able to pass folowing technical interview :(, it seems there is still some place for improvement left.
      
+      "... the feedback did not meet the criteria that we have established for our candidates, we regret to inform you that your application has not been selected for further consideration..."
+      
 ######################################################################################################
 Re: Python Backend Developer (m/f/d) - Industrial Data Science and Software - Application received
 
