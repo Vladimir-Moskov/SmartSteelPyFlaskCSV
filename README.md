@@ -9,8 +9,10 @@ Summary (2020-01-08):
 
 Update (2020-01-22): 
      Some how was not able to pass folowing technical interview :(, it seems there is still some place for improvement left.
+     Unfortunately, Had not get any meaningful performance feedback from them.
      
-      "... the feedback did not meet the criteria that we have established for our candidates, we regret to inform you that your application has not been selected for further consideration..."
+      "... the feedback did not meet the criteria that we have established for our candidates,
+      we regret to inform you that your application has not been selected for further consideration..."
       
 ######################################################################################################
 Re: Python Backend Developer (m/f/d) - Industrial Data Science and Software - Application received
