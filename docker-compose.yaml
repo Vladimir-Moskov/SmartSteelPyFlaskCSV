@@ -4,6 +4,6 @@ services:
     build:
       context: .
     container_name: python
-    image: aimvector/python:1.0.0
+    image: volodymyrmoskov/pythonimage:1.0.0
     ports:
       - 5000:5000
