@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: example-deploy
+    labels:
+        app: example-app
+spec:
+    selector:
+        matchLabels:
+            app: example-app
