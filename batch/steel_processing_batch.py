@@ -5,7 +5,7 @@
 """
 
 
-from app.models import SteelProcessing
+from app.models.steelProcessing import SteelProcessing
 from app.config import Config
 from collections import namedtuple
 
@@ -43,8 +43,10 @@ def steel_processing_batch():
                 # if line can not be inserted - data error, It will be stored in error file
                 try:
                     current_row = StlProc(*line.split(','))
-                    # TODO: its nice to have same to keep list row which has not been inserted because it
+                    # TODO: its nice to have something to keep list row which has not been inserted because it
                     #  already exists
+                    # TODO: in real world example this kind of process may be better to do with api call or/and
+                    # some kind of batch update
                     exists = SteelProcessing.query_add_by_id(current_row.id,
                                                     current_row.timestamp,
                                                     current_row.temperature,

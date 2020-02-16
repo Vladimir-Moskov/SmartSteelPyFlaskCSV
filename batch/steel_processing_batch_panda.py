@@ -5,7 +5,7 @@
 """
 
 from pandas import read_csv
-from app.models import SteelProcessing
+from app.models.steelProcessing import SteelProcessing
 from app.config import Config
 
 
@@ -37,8 +37,10 @@ def steel_processing_batch():
         # process data line by line
         for index, line in stell_proc_data_frame.iterrows():
             try:
-                # TODO: its nice to have same to keep list row which has not been inserted because it
+                # TODO: its nice to have something to keep list row which has not been inserted because it
                 #  already exists
+                # TODO: in real world example this kind of process may be better to do with api call or/and
+                # some kind of batch update
                 exists = SteelProcessing.query_add_by_id(line["id"],
                                                          line["timestamp"],
                                                          line["temperature"],

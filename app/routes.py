@@ -5,9 +5,10 @@
 from flask import request
 from flask import render_template
 from app import app
-from app.models import SteelProcessing
-from app.models import ApplicationRequestLog
+from app.models.steelProcessing import SteelProcessing
+from app.models.applicatonLog import ApplicationRequestLog
 from functools import wraps
+from typing import List
 
 
 def log_request(func):
@@ -57,7 +58,7 @@ def steel_processing():
     # TODO - it is nice to have paging/filtering over data
     return render_template('steelProcessing.html',
                            title='Steel Processing',
-                           headers=SteelProcessing.headers(),
+                           headers=steel_processing_headers(),
                            steelprocessing_all=SteelProcessing.query_get_all())
 
 
@@ -72,5 +73,23 @@ def log():
     # TODO - it is nice to have paging/filtering over data
     return render_template('applicationLog.html',
                            title='Application Log',
-                           headers=ApplicationRequestLog.headers(),
+                           headers=log_headers(),
                            logs_all=ApplicationRequestLog.query_get_all())
+
+
+# TODO - change it to dictionary {header: field}
+def log_headers() -> List[str]:
+    """
+            headers for front end
+           :return: list of headers names for ui
+    """
+    return ["ID", "TIMESTAMP", "IP", "URL", "METHOD", "AGENT", "USER"]
+
+
+# TODO - change it to dictionary {header: field}
+def steel_processing_headers() -> List[str]:
+    """
+        headers for front end
+        :return: list of headers names for ui
+    """
+    return ["ID", "TIMESTAMP", "TEMPERATURE", "DURATION"]
