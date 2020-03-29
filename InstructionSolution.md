@@ -1,26 +1,3 @@
-docker-compose build python
-docker-compose up  python
-#
-kubectl version --client
-
-kubectl config current-context
-kubectl get nodes
-kubectl get pods
-kubectl apply -f ./kubernetes/deployments/deployment.yaml
-kubectl get deploy
-kubectl get svc
->kubectl apply -f ./kubernetes/services/service.yaml
-
-kubectl scale deployment chat --replicas=0 -n service
-kubectl scale deployment chat --replicas=0 -n service
-
-
-kubectl delete deploy/example-deploy svc/example-service svc/example-service-2
-
-kubectl logs example-deploy-6f78796476-6ltg6
-
-docker pull volodymyrmoskov/pythonimage:1.0.0
-
 # Here is solution
   1. Flask ecosystem has been used to implement task.
   2. SQLAlchemy and ORM to deal with data model.
@@ -140,3 +117,27 @@ docker pull volodymyrmoskov/pythonimage:1.0.0
     5. To see log data from DB use this page
 
        > http://localhost:5000/log
+
+# Docker
+docker-compose build python
+docker-compose up  python
+#
+kubectl version --client
+
+kubectl config current-context
+kubectl get nodes
+kubectl get pods
+kubectl apply -f ./kubernetes/deployments/deployment.yaml
+kubectl get deploy
+kubectl get svc
+>kubectl apply -f ./kubernetes/services/service.yaml
+
+kubectl scale deployment chat --replicas=0 -n service
+kubectl scale deployment chat --replicas=0 -n service
+
+
+kubectl delete deploy/example-deploy svc/example-service svc/example-service-2
+
+kubectl logs example-deploy-6f78796476-6ltg6
+
+docker pull volodymyrmoskov/pythonimage:1.0.0
