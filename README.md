@@ -1,72 +1,167 @@
 # SmartSteelPyFlaskCSV
-Home work for Smart Steel ********gies ***
+# Here is solution ()
+  0. Please, see Task statement in HOME_WORK.md
+  1. Flask ecosystem has been used to implement task.
+  2. SQLAlchemy and ORM to deal with data model.
+  3. flask_migrate Migrate to manage DB changes(add/update/delete table/field/model)
+  4. web application page mapping in app/routes.
+  5. batch job has been implemented as independent part of the system - here batch/steel_processing_batch.py
 
-Summary (2020-01-08): 
-     Fortunately, my solution was good enough to proceed
-     with further steps with this company. - Good news indeed.
-     
-     "We are pleased to invite you to the next step in our recruitment process, a technical phone interview."...
 
-Update (2020-01-22): 
-     Some how was not able to pass folowing technical interview :(, it seems there is still some place for improvement left.
-     Unfortunately, Had not get any meaningful performance feedback from them.
-     
-      "... the feedback did not meet the criteria that we have established for our candidates,
-      we regret to inform you that your application has not been selected for further consideration..."
-      
-######################################################################################################
-Re: Python Backend Developer (m/f/d) - Industrial Data Science and Software - Application received
+## Project repository
+> https://github.com/Vladimir-Moskov/SmartSteelPyFlaskCSV
 
-...............
+## From point of view MVP (Minimum Valuable Product)
 
-We have carefully reviewed your application, and would like to invite you to move on to the next step in our
-recruitment process. Our engineers have designed a task for you to complete that will help us more precisely
-determine your experience level with regards to machine learning and software engineering. The task is not meant to
-be especially difficult or time consuming, and because there is no one correct solution, the specific way you approach
-the problem is the information that we value the most. With that in mind, please make sure to explain with reasonable
-detail how you have arrived to your solution.
+1. For simplicity - logging has not been added
+> TODO: add real life logging
+> https://www.scalyr.com/blog/getting-started-quickly-with-flask-logging/
+> https://stackoverflow.com/questions/52728928/setting-up-a-database-handler-for-flask-logger
 
-.............
+2. For simplicity - unit tests and integration tests has not been implemented as well
+> TODO: add real life tests with pytest
 
-Please also note that we consider code or expository text that is copy-pasted without
-citation as plagiarism, but we also gladly accept solutions that do contain citations.
+3. For simplicity - there is no any authorization/security
+> TODO: implement it
 
-..................
+4. TODO: add flask-serialize
+5. TODO: fix time zone
 
-****************************** TASK  ***********************************************
+## Project setup steps (Windows only)
 
-    We have supplied you with a file named 'task_data.csv'. The programming task
-    that we are asking you to perform is purposely open-ended. For a Python
-    developer with the type of experience we are looking for, the task should not
-    take a significant amount of time. We have tried to design it such that it
-    should not take more than one hour. We do expect that you will have to refer to
-    some documentation, but we do not intend to have you learn a significant amount
-    of new Python or general development libraries, tools, or concepts.
+ 1. download project into your local disc or do VCS - Check out from version
+    if you use Pycharm
 
-    It is the goal of the task to allow candidates to highlight decision making and
-    development choices in the context in which we as a team frequently work.
+ 2. Install latest Python 3.7 if you do not have [https://realpython.com/installing-python/]
+    and run cmd console
 
-    We recommend the following steps in order to produce the required deliverable:
+ 3. Install pip  use command
+   > python get-pip.py
+   or follow step by step [https://www.liquidweb.com/kb/install-pip-windows/]
 
-    1. Create an application that transfers `task_data.csv` to a database
-    2. Create a _separate_ web application that is able to connect to this database
-    3. Serve the database data (from `task_data.csv`) in a _simple_ html format
-    4. On each GET request, log that the data was requested (in the same database)
-    5. Package the applications into a _bare_ Git repository
-    6. Prepare instructions for setting up and running the applications
-    7. Prepare justification for your development decisions as you see necessary
+ 4. Install Python virtualenv with command
+   > pip install virtualenv
 
-    Therefore, the required deliverable is the following:
+ 5. set project folder as you current folder
+    > cd   your_local_folder/SmartSteelPyFlaskCSV
 
-    1. A _bare_ Git repository
-    2. Instructions for setting up and running the applications
-    3. Justification for your development decisions as you see necessary
+ 6. Run next command in order to create virtualenv for project
+   > virtualenv venv
 
-    Please take care to note the _emphasized_ points.
+ 7. Activate virtual environment
+   > your_local_folder/SmartSteelPyFlaskCSV/venv/Scripts/activate
 
-    Generally, the criteria that is worth focusing on is the following:
+ 8. install project dependencies
 
-    * Simple, clear, and fully-functional set-up instructions
-    * Simple, sufficient code (e.g. premature generalization is unnecessary)
-    * Appropriate choices of tooling and libraries given the scope of the task
-********************************************************************************************************************
+   > pip install -r ../../requirements.txt
+
+    and use
+
+    > pip freeze > ../../requirements.txt
+
+    in order to update list of project libraries
+    and use
+
+    > pip install <package-name>
+
+    in case you miss some
+
+ 9. You do not need to setup/update DB - it has been added in to repository
+   > Data Base: sql lite in file SmartSteelPyFlaskCSV/app/app.db
+   Here are some commands how to dial with it in case you want to do modifications
+    > flask db init
+
+    > flask db migrate -m "SteelProcessing table"
+
+    > flask db migrate
+
+    > flask db upgrade
+
+
+ ## Run instructions
+ ### Start data extractor
+    > application that transfers `task_data.csv` to a database
+    1. Here is where application located -
+        > SmartSteelPyFlaskCSV/batch/steel_processing_batch.py
+
+     which use given file `task_data.csv` from folder
+      > SmartSteelPyFlaskCSV/resource
+      (this can be adjusted here - SmartSteelPyFlaskCSV/app/config.py)
+
+    2. use command
+        > python SmartSteelPyFlaskCSV/batch/steel_processing_batch.py
+      to run data transfer in to DB
+
+    3. use clean DB script in case you want to repeat a test
+       > python SmartSteelPyFlaskCSV/batch/clear_all_db.py
+
+ ### Start web application
+    > web application that is able to connect to this database
+
+    1.  Here is where application located -
+        > SmartSteelPyFlaskCSV/app
+
+    2. Run it with
+       >  python SmartSteelPyFlaskCSV/app/smart_steel_technologies.py
+
+    3. application will be started on
+
+        > http://localhost:5000/
+
+        with home page
+
+        > http://localhost:5000/index
+
+    4. To see DB data from file `task_data.csv` use this page
+
+       > http://localhost:5000/steelProcessing
+
+    5. To see log data from DB use this page
+
+       > http://localhost:5000/log
+
+# Docker
+    with using simple flow - https://www.youtube.com/watch?v=d1ZMnV4yM1U&t=530s
+
+    ### Build project and setup docker image
+    docker-compose build python
+
+    ### Start application
+    docker-compose up python
+
+    ### update docker repository
+    docker-compose push python
+
+    ### use docker image shell commands
+    (https://phase2.github.io/devtools/common-tasks/ssh-into-a-container/)
+    docker exec -it  python  /bin/bash
+    docker exec -it  python pwd
+
+    ## add K-K-K-Kubernetes !!!
+    ### some info commands
+    kubectl --help
+    kubectl version --client
+    kubectl config current-context
+    kubectl get nodes
+    kubectl get pods
+
+    ## create Kubernetes deployment
+    kubectl apply -f ./kubernetes/deployments/deployment.yaml
+    kubectl get deploy
+
+    ### enable traffic / expose and load balancing
+    (create DNS entry inside cluster )
+    >kubectl apply -f ./kubernetes/services/service.yaml
+
+    ### check created services
+    > kubectl get svc
+
+    kubectl scale deployment chat --replicas=0 -n service
+    kubectl scale deployment chat --replicas=0 -n service
+
+
+    kubectl delete deploy/example-deploy svc/example-service svc/example-service-2
+
+    kubectl logs example-deploy-6f78796476-6ltg6
+
+    docker pull volodymyrmoskov/pythonimage:1.0.0

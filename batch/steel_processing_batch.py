@@ -58,7 +58,7 @@ def steel_processing_batch():
     # put all lines with errors in the file
     if len(errors) > 0:
         filepath = Config.get_file_batch_steel_processing_error()
-        # overwrite revious content
+        # overwrite reviews content
         with open(filepath, 'w') as file_error:
             for item in errors:
                 file_error.write("%s\n" % item)
