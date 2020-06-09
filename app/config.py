@@ -8,7 +8,7 @@ from datetime import datetime
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 
-class Config(object):
+class Config:
     """
         Class with configurations
     """

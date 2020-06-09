@@ -10,7 +10,7 @@ from app.config import Config
 from collections import namedtuple
 
 
-def steel_processing_batch():
+def steel_processing_batch() -> None:
     """
     All in one place function - read from file and save in db
 

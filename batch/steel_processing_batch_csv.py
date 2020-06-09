@@ -9,7 +9,7 @@ from app.models.steelProcessing import SteelProcessing
 from app.config import Config
 
 
-def steel_processing_batch():
+def steel_processing_batch() -> None:
     """
     All in one place function - read from file and save in db
 

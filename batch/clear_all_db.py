@@ -6,7 +6,7 @@ from app.models.steelProcessing import SteelProcessing
 from app.models.applicatonLog import ApplicationRequestLog
 
 
-def clean_db():
+def clean_db() -> None:
     """
       Run clean DB by using Flask ecosystem - just call model interface
     """

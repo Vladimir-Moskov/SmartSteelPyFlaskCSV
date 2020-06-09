@@ -29,7 +29,7 @@ class ApplicationRequestLog(db.Model):
                f' user_agent:{self.user_agent}>'
 
     @classmethod
-    def query_get_all(cls):
+    def query_get_all(cls) -> None:
         """
         just select all
         :return: all records from db (no paging or filtering)
@@ -37,7 +37,7 @@ class ApplicationRequestLog(db.Model):
         return cls.query.all()
 
     @classmethod
-    def query_delete_all(cls):
+    def query_delete_all(cls) -> None:
         """
             just delete all records from table - for testing purpose only
 
@@ -46,7 +46,7 @@ class ApplicationRequestLog(db.Model):
         db.session.commit()
 
     @classmethod
-    def query_add(cls, request):
+    def query_add(cls, request) -> None:
         """
         add log record into DB, simple as possible
         :param request: real request - GET http from browser, web page
