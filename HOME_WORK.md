@@ -1,37 +1,10 @@
 # SmartSteelPyFlaskCSV
 Home work for Smart Steel ********gies ***
 
-Summary (2020-01-08):
-     Fortunately, my solution was good enough to proceed
-     with further steps with this company. - Good news indeed.
-
-     "We are pleased to invite you to the next step in our recruitment process, a technical phone interview."...
-
-Update (2020-01-22):
-     Some how was not able to pass folowing technical interview :(, it seems there is still some place for improvement left.
-     Unfortunately, Had not get any meaningful performance feedback from them.
-
-      "... the feedback did not meet the criteria that we have established for our candidates,
-      we regret to inform you that your application has not been selected for further consideration..."
 
 ######################################################################################################
 Re: Python Backend Developer (m/f/d) - Industrial Data Science and Software - Application received
 
-...............
-
-We have carefully reviewed your application, and would like to invite you to move on to the next step in our
-recruitment process. Our engineers have designed a task for you to complete that will help us more precisely
-determine your experience level with regards to machine learning and software engineering. The task is not meant to
-be especially difficult or time consuming, and because there is no one correct solution, the specific way you approach
-the problem is the information that we value the most. With that in mind, please make sure to explain with reasonable
-detail how you have arrived to your solution.
-
-.............
-
-Please also note that we consider code or expository text that is copy-pasted without
-citation as plagiarism, but we also gladly accept solutions that do contain citations.
-
-..................
 
 ****************************** TASK  ***********************************************
 
