@@ -1,3 +1,5 @@
+# TODO: finish docker-compose
+
 # SmartSteelPyFlaskCSV
 # Here is solution ()
   0. Please, see Task statement in HOME_WORK.md
